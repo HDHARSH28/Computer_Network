@@ -1,5 +1,0 @@
----
-triple:          'arm64-apple-darwin'
-binary-path:     'Q2_Stop_Wait_ARQ/receiver_arq'
-relocations:     []
-...
