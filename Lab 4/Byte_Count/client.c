@@ -13,8 +13,6 @@ struct frames
     char frame[120];
 };
 
-
-
 int stringLength(char str[])
 {
     int length = 0;
