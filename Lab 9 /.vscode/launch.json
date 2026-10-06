@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/hd_harsh/Documents/SEM 5/CN/Lab 9 new",
+      "program": "/Users/hd_harsh/Documents/SEM 5/CN/Lab 9 new/build/Debug/outDebug"
+    }
+  ]
+}
