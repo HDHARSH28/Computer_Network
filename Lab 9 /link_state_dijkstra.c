@@ -29,13 +29,33 @@ int main(void)
         return 1;
     }
 
-    printf("Enter the adjacency matrix (-1 means no link, 0 on diagonal):\n");
     for (int i = 0; i < vertices; i++) {
         for (int j = 0; j < vertices; j++) {
-            if (scanf("%d", &graph[i][j]) != 1 || graph[i][j] < -1) {
-                fprintf(stderr, "Invalid link cost. Costs must be >= 0 or -1.\n");
+            graph[i][j] = (i == j) ? 0 : -1;
+        }
+    }
+
+    printf("Enter adjacency list for each router.\n");
+    printf("For each router, enter: number_of_neighbors neighbor cost ...\n");
+    for (int i = 0; i < vertices; i++) {
+        int neighbors;
+
+        if (scanf("%d", &neighbors) != 1 || neighbors < 0 || neighbors >= vertices) {
+            fprintf(stderr, "Invalid number of neighbors.\n");
+            return 1;
+        }
+
+        for (int j = 0; j < neighbors; j++) {
+            int neighbor;
+            int cost;
+
+            if (scanf("%d %d", &neighbor, &cost) != 2 ||
+                neighbor < 0 || neighbor >= vertices || neighbor == i || cost < 0) {
+                fprintf(stderr, "Invalid neighbor or link cost.\n");
                 return 1;
             }
+
+            graph[i][neighbor] = cost;
         }
     }
 
